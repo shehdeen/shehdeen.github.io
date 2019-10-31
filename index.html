@@ -27,7 +27,7 @@
     <br><br> 
     Email: <input name="email" required="" size="75" type="email"/> 
     <br><br>
-    Userid: <input name="user_id" required="" size="75" type="userid"/> 
+    Userid: <input name="userid" required="" size="75" type="userid"/> 
     <br><br>
     <input name="submit" type="submit" value="submit"/>
 </form> 
@@ -40,14 +40,14 @@
             var fullname = form["fullname"].value;
             var destination = form["destination"].value;
             var details = form["details"].value;
-            var userid = form["details"].user_id;
+            var userid = form["details"].userid;
             var user = {
                 email: email, 
                 name: fullname, 
                 destination: destination, 
                 details: details
             };
-            analytics.identify(user_id, {
+            analytics.identify(userid, {
                 email: email, 
                 name: fullname
             });
