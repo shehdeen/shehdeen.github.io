@@ -48,10 +48,10 @@
                 details: details
                 userid: userid
             };
-            document.write (userid)
             analytics.identify(userid, {
                 email: email, 
-                name: fullname
+                name: fullname,
+                details: details
             });
             analytics.track('destination submitted', user, function() {
                 window.location.href = "";
