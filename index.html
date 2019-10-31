@@ -27,6 +27,8 @@
     <br><br> 
     Email: <input name="email" required="" size="75" type="email"/> 
     <br><br>
+    Userid: <input name="user_id" required="" size="75" type="userid"/> 
+    <br><br>
     <input name="submit" type="submit" value="submit"/>
 </form> 
     
@@ -44,7 +46,7 @@
                 destination: destination, 
                 details: details
             };
-            analytics.identify('1234', {
+            analytics.identify(user_id, {
                 email: email, 
                 name: fullname
             });
