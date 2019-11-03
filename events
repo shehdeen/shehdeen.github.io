@@ -1,0 +1,30 @@
+analytics.page({
+  title: 'Test',
+  url: 'https://shehdeen.github.io/shehdeentest.github.io/',
+  path: '/shehdeentest.github.io',
+  referrer: 'https://segment.com/'
+})
+            
+analytics.track("Flights Searched", {
+  category: "flight",
+  flight_type: "roundtrip",
+  currency: "USD",
+  fb_departing_departure_date: "20190623",
+  fb_returning_departure_date: "20190625",
+  fb_origin_airport: "SFO",
+  fb_destination_airport: "JFK",
+  fb_departing_arrival_date: "20190623",
+  fb_returning_arrival_date: "20190626",
+  fb_num_adults: "1",
+  fb_num_children: "0",
+  fb_num_infants: "0",
+  fb_travel_class: "economy",
+  fb_preferred_num_stops: "0",
+  fb_price: "100"
+});
+
+analytics.identify("1234", {
+    email: "shehdeen@gmail.com", 
+    name: "Shehdeen Farooq",
+    details: "Purchaser of top shelf whiskey"
+});
