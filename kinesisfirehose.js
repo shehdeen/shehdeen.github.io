@@ -6,7 +6,6 @@ AWS.config.credentials = new AWS.CognitoIdentityCredentials({
 AWS.config.region = 'ap-southeast-2';
 // We're going to partition Amazon Kinesis records based on an identity.
 // We need to get credentials first, then attach our event listeners.
-AWS.config.credentials.get(function(err) {
 
 PutRecordRequest putRecordRequest = new PutRecordRequest();
 putRecordRequest.setDeliveryStreamName(Shehdeen-test);
@@ -19,8 +18,6 @@ putRecordRequest.setRecord(record);
 // Put record into the DeliveryStream
 firehoseClient.putRecord(putRecordRequest);   
     
-    
-\
     
     
 });
