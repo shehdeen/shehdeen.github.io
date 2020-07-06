@@ -7,17 +7,31 @@ AWS.config.region = 'ap-southeast-2';
 // We're going to partition Amazon Kinesis records based on an identity.
 // We need to get credentials first, then attach our event listeners.
 
-PutRecordRequest putRecordRequest = new PutRecordRequest();
-putRecordRequest.setDeliveryStreamName(Shehdeen-test);
+AWS.config.credentials.get(function(err) {
+    // attach event listener
+    if (err) {
+        alert('Error retrieving credentials.');
+        console.error(err);
+        return;
+    }
+    // create Amazon Kinesis service object
+    AWS.config.apiVersions = {
+      firehose: '2015-08-04',
+      // other service API versions
+    };
 
-String data = "testing";
+    var firehose = new AWS.Firehose();
 
-Record record = new Record().withData(ByteBuffer.wrap(data.getBytes()));
-putRecordRequest.setRecord(record);
-
-// Put record into the DeliveryStream
-firehoseClient.putRecord(putRecordRequest);   
-    
-    
+    var params = {
+      DeliveryStreamName: 'Shehdeen-test', /* required */
+      Record: { /* required */
+        Data: "Testing"
+          //Data: Buffer.from('...') || 'STRING_VALUE' /* Strings will be Base-64 encoded on your behalf */ /* required */
+      }
+    };
+    firehose.putRecord(params, function(err, data) {
+      if (err) console.log(err, err.stack); // an error occurred
+      else     console.log(data);           // successful response
+    });
     
 });
