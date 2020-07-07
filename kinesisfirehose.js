@@ -20,19 +20,7 @@ AWS.config.credentials.get(function(err) {
       // other service API versions
     };
 /*
-    var firehose = new AWS.Firehose();
 
-    var params = {
-      DeliveryStreamName: 'Shehdeen-test', /* required */
-      Record: { /* required */
-        Data: "Testing"
-          //Data: Buffer.from('...') || 'STRING_VALUE' /* Strings will be Base-64 encoded on your behalf */ /* required */
-      }
-    };
-    firehose.putRecord(params, function(err, data) {
-      if (err) console.log(err, err.stack); // an error occurred
-      else     console.log(data);           // successful response
-    });
 */
 
 function firehoseEvent(payload) {
