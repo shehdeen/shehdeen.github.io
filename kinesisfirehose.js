@@ -39,3 +39,9 @@ function firehoseEvent(payload) {
     });
 
 };
+
+analytics.on('track', function(event, properties, options) {
+
+  firehoseEvent(event);
+
+});
