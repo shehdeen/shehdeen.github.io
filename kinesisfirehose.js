@@ -20,7 +20,7 @@ AWS.config.credentials.get(function(err) {
       // other service API versions
     };
     
-};
+});
 
 function firehoseEvent(payload) {
     
