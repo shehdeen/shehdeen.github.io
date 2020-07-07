@@ -44,7 +44,7 @@ analytics.on('track', function(event, properties, options) {
 
     var impressionEventName = 'impression';
     if (event == impressionEventName) {
-        firehoseEvent(properties)    
+        firehoseEvent(JSON.stringify(properties));    
     }
 
 });
