@@ -38,4 +38,4 @@ function firehoseEvent(payload) {
       else     console.log(data);           // successful response
     });
 
-}
+};
