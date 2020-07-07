@@ -42,7 +42,9 @@ function firehoseEvent(payload) {
 
 analytics.on('track', function(event, properties, options) {
 
-    firehoseEvent(event)
-    console.log(event);
+    var impressionEventName = 'impression';
+    if (event == impressionEventName) {
+        firehoseEvent(properties)    
+    }
 
 });
