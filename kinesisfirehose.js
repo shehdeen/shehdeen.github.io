@@ -19,9 +19,8 @@ AWS.config.credentials.get(function(err) {
       firehose: '2015-08-04',
       // other service API versions
     };
-/*
-
-*/
+    
+};
 
 function firehoseEvent(payload) {
     
@@ -38,5 +37,4 @@ function firehoseEvent(payload) {
       if (err) console.log(err, err.stack); // an error occurred
       else     console.log(data);           // successful response
     });
-    
-};
+
