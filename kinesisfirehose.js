@@ -19,7 +19,7 @@ AWS.config.credentials.get(function(err) {
       firehose: '2015-08-04',
       // other service API versions
     };
-
+/*
     var firehose = new AWS.Firehose();
 
     var params = {
@@ -33,5 +33,23 @@ AWS.config.credentials.get(function(err) {
       if (err) console.log(err, err.stack); // an error occurred
       else     console.log(data);           // successful response
     });
-    
+*/
 });
+
+function firehoseEvent(payload) {
+    
+    var firehose = new AWS.Firehose();
+
+    var params = {
+      DeliveryStreamName: 'Shehdeen-test', /* required */
+      Record: { /* required */
+        Data: payload
+          //Data: Buffer.from('...') || 'STRING_VALUE' /* Strings will be Base-64 encoded on your behalf */ /* required */
+      }
+    };
+    firehose.putRecord(params, function(err, data) {
+      if (err) console.log(err, err.stack); // an error occurred
+      else     console.log(data);           // successful response
+    });
+    
+};
