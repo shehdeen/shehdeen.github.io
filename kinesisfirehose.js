@@ -34,7 +34,6 @@ AWS.config.credentials.get(function(err) {
       else     console.log(data);           // successful response
     });
 */
-});
 
 function firehoseEvent(payload) {
     
